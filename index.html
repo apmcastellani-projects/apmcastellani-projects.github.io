@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alessandro Castellani | Mathematics & Football Data Analytics</title>
-  <meta name="description" content="Portfolio of Alessandro Castellani - Student in Mathematics & Applied Data Science. Projects in Football Analytics, Machine Learning, and Statistical Modeling." />
+  <meta name="description" content="Portfolio of Alessandro Castellani - Graduate in Mathematics & MSc Candidate in Data Analytics for Business. Quantitative Football Analytics, Machine Learning & Statistical Modeling." />
   
-  <!-- Google Fonts & Icons -->
+  <!-- Inter Font & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
-      --bg: #07090e;
-      --card-bg: rgba(18, 24, 38, 0.7);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover: rgba(255, 255, 255, 0.12);
-      --text-main: #f3f4f6;
-      --text-muted: #94a3b8;
-      --accent-green: #10b981;
-      --accent-green-glow: rgba(16, 185, 129, 0.25);
-      --accent-blue: #38bdf8;
-      --accent-blue-glow: rgba(56, 189, 248, 0.2);
+      --bg: #ffffff;
+      --bg-subtle: #f8fafc;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --accent: #0f172a;
+      --tag-bg: #f1f5f9;
+      --tag-text: #334155;
     }
 
     * {
@@ -33,329 +33,313 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
-      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      padding: 2.5rem 1.25rem 4rem 1.25rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2.5rem 1.25rem;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12), transparent 45%),
-        radial-gradient(circle at 10% 80%, rgba(56, 189, 248, 0.08), transparent 40%);
-      background-attachment: fixed;
     }
 
     .container {
       width: 100%;
-      max-width: 680px;
+      max-width: 660px;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.25rem;
     }
 
-    /* Hero Profile Section */
-    .profile-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 24px;
-      padding: 2.25rem 1.75rem;
-      text-align: center;
+    /* Profile Header */
+    .profile-section {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .profile-top {
+      display: flex;
       align-items: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      gap: 1.25rem;
+      width: 100%;
     }
 
-    .avatar-wrapper {
-      width: 96px;
-      height: 96px;
+    .avatar {
+      width: 84px;
+      height: 84px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #10b981, #0284c7);
+      object-fit: cover;
+      border: 1px solid var(--border-dark);
+      flex-shrink: 0;
+    }
+
+    .profile-titles {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 0 25px var(--accent-green-glow);
-      letter-spacing: -1px;
+      flex-direction: column;
+      gap: 0.2rem;
     }
 
     .profile-name {
-      font-size: 1.85rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.35rem;
-      background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      line-height: 1.2;
     }
 
     .profile-headline {
-      font-size: 1.05rem;
-      color: var(--accent-blue);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .profile-location {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.15rem;
     }
 
     .profile-bio {
       font-size: 0.95rem;
       color: var(--text-muted);
-      max-width: 520px;
-      margin-bottom: 1.25rem;
-      line-height: 1.55;
+      line-height: 1.65;
     }
 
-    .tag-container {
+    /* Meta details / tags */
+    .credentials {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      gap: 0.45rem;
     }
 
-    .badge {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
-      padding: 0.35rem 0.8rem;
-      border-radius: 9999px;
+    .cred-pill {
       font-size: 0.8rem;
       font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--border);
     }
 
-    .badge i {
-      color: var(--accent-green);
+    /* Direct Action Buttons */
+    .actions-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      width: 100%;
     }
 
-    /* Primary Action Buttons */
-    .primary-actions {
+    .btn-row-dual {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      width: 100%;
-      margin-bottom: 1rem;
+      gap: 0.65rem;
     }
 
-    @media (max-width: 480px) {
-      .primary-actions {
+    @media (max-width: 500px) {
+      .btn-row-dual {
         grid-template-columns: 1fr;
       }
     }
 
     .btn {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.65rem;
-      padding: 0.95rem 1.25rem;
-      border-radius: 14px;
-      font-size: 0.95rem;
+      gap: 0.5rem;
+      font-size: 0.9rem;
       font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
       text-decoration: none;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.15s ease;
       cursor: pointer;
     }
 
-    .btn-cv {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    .btn-primary {
+      background: #0f172a;
       color: #ffffff;
-      box-shadow: 0 4px 15px var(--accent-green-glow);
+      border: 1px solid #0f172a;
     }
 
-    .btn-cv:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    .btn-primary:hover {
+      background: #334155;
+      border-color: #334155;
     }
 
-    .btn-vcard {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #ffffff;
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-dark);
     }
 
-    .btn-vcard:hover {
-      background: rgba(255, 255, 255, 0.12);
-      transform: translateY(-2px);
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+      border-color: #94a3b8;
     }
 
-    /* Social Icons Row */
-    .social-row {
+    /* Direct Channels / Contact Links */
+    .channels {
       display: flex;
-      justify-content: center;
-      gap: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       width: 100%;
     }
 
-    .social-btn {
+    .channel-item {
       flex: 1;
-      max-width: 60px;
-      height: 48px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      color: var(--text-main);
+      min-width: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      gap: 0.5rem;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
       text-decoration: none;
-      transition: all 0.2s ease;
+      background: #ffffff;
+      transition: all 0.15s ease;
     }
 
-    .social-btn:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--accent-green);
-      transform: translateY(-2px);
+    .channel-item:hover {
+      color: var(--text-main);
+      border-color: #94a3b8;
+      background: var(--bg-subtle);
     }
 
-    /* Section Headers */
+    /* Section Styling */
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
     .section-title {
-      font-size: 1.2rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1rem;
-      color: #ffffff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-light);
     }
 
-    .section-title i {
-      color: var(--accent-green);
-      font-size: 1.1rem;
-    }
-
-    /* Projects Grid */
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
+    /* Projects List */
     .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 20px;
-      padding: 1.5rem;
-      transition: all 0.25s ease;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.6rem;
+      transition: border-color 0.15s ease;
     }
 
     .project-card:hover {
-      border-color: var(--card-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+      border-color: #94a3b8;
     }
 
     .project-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.75rem;
+      align-items: baseline;
+      gap: 0.5rem;
     }
 
     .project-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
       line-height: 1.35;
     }
 
-    .project-badge {
-      font-size: 0.75rem;
+    .project-meta {
+      font-size: 0.78rem;
       font-weight: 600;
-      padding: 0.25rem 0.6rem;
-      border-radius: 8px;
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--accent-blue);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--text-light);
       white-space: nowrap;
     }
 
     .project-desc {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
-    .project-tags {
+    .tech-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.35rem;
+      margin-top: 0.15rem;
     }
 
-    .tech-pill {
+    .tech-badge {
       font-size: 0.75rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      color: #94a3b8;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-      font-family: monospace;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      color: #475569;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
     }
 
     .project-links {
       display: flex;
-      gap: 0.65rem;
-      margin-top: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
     }
 
-    .card-link {
+    .link-action {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      font-size: 0.85rem;
+      gap: 0.4rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      color: var(--text-main);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 0.5rem 0.85rem;
-      border-radius: 10px;
+      color: #0f172a;
       text-decoration: none;
-      transition: all 0.2s ease;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      background: #ffffff;
+      transition: all 0.15s ease;
     }
 
-    .card-link:hover {
-      background: rgba(255, 255, 255, 0.14);
+    .link-action:hover {
+      background: var(--bg-subtle);
+      border-color: #0f172a;
+    }
+
+    .link-action.bold-action {
+      background: #0f172a;
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.25);
+      border-color: #0f172a;
     }
 
-    .card-link.primary-link {
-      background: rgba(16, 185, 129, 0.15);
-      border-color: rgba(16, 185, 129, 0.35);
-      color: #34d399;
-    }
-
-    .card-link.primary-link:hover {
-      background: rgba(16, 185, 129, 0.25);
-      color: #6ee7b7;
+    .link-action.bold-action:hover {
+      background: #334155;
+      border-color: #334155;
     }
 
     /* Footer */
     footer {
-      text-align: center;
-      margin-top: 1rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.85rem;
-      color: #64748b;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
     }
   </style>
 </head>
@@ -363,162 +347,166 @@
 
   <main class="container">
 
-    <!-- Profile Header Card -->
-    <header class="profile-card">
-      <div class="avatar-wrapper">
-        AC
+    <!-- Profile Header -->
+    <header class="profile-section">
+      <div class="profile-top">
+        <img src="assets/foto_alessandro.png" alt="Alessandro Castellani" class="avatar" />
+        <div class="profile-titles">
+          <h1 class="profile-name">Alessandro Castellani</h1>
+          <p class="profile-headline">BSc in Mathematics · MSc in Data Analytics for Business</p>
+          <p class="profile-location">
+            <i class="fa-solid fa-location-dot"></i> Milan / Como, Italy · Available for travel
+          </p>
+        </div>
       </div>
-      <h1 class="profile-name">Alessandro Castellani</h1>
-      <p class="profile-headline">Student in Mathematics & Applied Data Science</p>
-      
+
       <p class="profile-bio">
-        Applying quantitative rigor, statistical modeling, and machine learning to football analytics and predictive engineering. Currently seeking internship opportunities within professional football clubs, sports analytics, and governing bodies.
+        Graduate in Mathematics (Università dell'Insubria) currently pursuing a Master of Science in Data Analytics for Business at Università Cattolica del Sacro Cuore in Milan. Applying econometric modeling, machine learning, and quantitative analytics to football scouting, player evaluation, and predictive performance.
       </p>
 
-      <div class="tag-container">
-        <span class="badge"><i class="fa-solid fa-graduation-cap"></i> BSc in Mathematics (Insubria)</span>
-        <span class="badge"><i class="fa-solid fa-chart-line"></i> MSc Data Analytics for Business (Cattolica)</span>
-        <span class="badge"><i class="fa-solid fa-medal"></i> Competitive Golfer</span>
-        <span class="badge"><i class="fa-solid fa-location-dot"></i> Milan / Como, Italy</span>
+      <div class="credentials">
+        <span class="cred-pill">BSc Mathematics (Thesis: Neural Networks in Football)</span>
+        <span class="cred-pill">MSc Data Analytics (Cattolica)</span>
+        <span class="cred-pill">Competitive Golfer (National Championships)</span>
+        <span class="cred-pill">Hyrox Competitor</span>
       </div>
 
-      <!-- Main Action Buttons -->
-      <div class="primary-actions">
-        <a href="CV-Alessandro-Castellani.pdf" download class="btn btn-cv">
-          <i class="fa-solid fa-file-arrow-down"></i> Scarica CV / Resume
-        </a>
-        <a href="alessandro_castellani.vcf" download class="btn btn-vcard">
-          <i class="fa-solid fa-address-card"></i> Salva Contatto
-        </a>
+      <!-- Resume & Contact Download -->
+      <div class="actions-grid">
+        <div class="btn-row-dual">
+          <a href="CV-Alessandro-Castellani-Europeo.pdf" download class="btn btn-primary">
+            <i class="fa-solid fa-file-arrow-down"></i> Download European CV (PDF)
+          </a>
+          <a href="CV-Alessandro-Castellani-International.pdf" download class="btn btn-secondary">
+            <i class="fa-solid fa-file-lines"></i> Download International CV (PDF)
+          </a>
+        </div>
+        <div>
+          <a href="alessandro_castellani.vcf" download class="btn btn-secondary" style="width: 100%;">
+            <i class="fa-solid fa-address-card"></i> Save Contact to Phone (vCard)
+          </a>
+        </div>
       </div>
 
-      <!-- Social & Direct Channels -->
-      <nav class="social-row" aria-label="Social Links">
-        <a href="https://wa.me/393335288084" target="_blank" rel="noopener" class="social-btn" title="Chat on WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
+      <!-- Direct Channels -->
+      <nav class="channels" aria-label="Direct Channels">
+        <a href="https://wa.me/393335288084" target="_blank" rel="noopener" class="channel-item">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
         </a>
-        <a href="mailto:alecaste041202@gmail.com" class="social-btn" title="Send Email">
-          <i class="fa-regular fa-envelope"></i>
+        <a href="mailto:alecaste041202@gmail.com" class="channel-item">
+          <i class="fa-regular fa-envelope"></i> Email
         </a>
-        <a href="https://www.linkedin.com/in/alessandro-castellani/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn Profile">
-          <i class="fa-brands fa-linkedin-in"></i>
+        <a href="https://www.linkedin.com/in/alessandro-castellani/" target="_blank" rel="noopener" class="channel-item">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
-        <a href="https://github.com/apmcastellani-projects" target="_blank" rel="noopener" class="social-btn" title="GitHub Profile">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="tel:+393335288084" class="social-btn" title="Call Direct">
-          <i class="fa-solid fa-phone"></i>
+        <a href="https://github.com/apmcastellani-projects" target="_blank" rel="noopener" class="channel-item">
+          <i class="fa-brands fa-github"></i> GitHub
         </a>
       </nav>
     </header>
 
-    <!-- Projects Section -->
-    <section>
-      <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Featured Projects & Research</h2>
-      
-      <div class="projects-list">
+    <!-- Research & Quantitative Projects -->
+    <section class="section">
+      <h2 class="section-title">Quantitative Projects & Research</h2>
 
-        <!-- Project 1: Serie A xG Modeling -->
-        <article class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Evaluating Offensive Production in Serie A</h3>
-            <span class="project-badge">Football Modeling</span>
-          </div>
-          <p class="project-desc">
-            An applied linear regression study modeling Expected Goals (xG) on 120 Serie A forwards using Opta/FBref data. Includes tactical outlier identification (Krunić, João Pedro), collinearity testing, and out-of-sample prediction on Olivier Giroud (R² = 91.4%).
-          </p>
-          <div class="project-tags">
-            <span class="tech-pill">R Markdown</span>
-            <span class="tech-pill">Opta / FBref</span>
-            <span class="tech-pill">Linear Models</span>
-            <span class="tech-pill">xG Analytics</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models/raw/main/Final-Assignment.pdf" target="_blank" class="card-link primary-link">
-              <i class="fa-solid fa-file-pdf"></i> Read Paper (PDF)
-            </a>
-            <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models" target="_blank" class="card-link">
-              <i class="fa-brands fa-github"></i> Repository
-            </a>
-          </div>
-        </article>
+      <!-- Project 1: Serie A xG -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Evaluating Offensive Production in Serie A (xG Linear Modeling)</h3>
+          <span class="project-meta">Research Paper · 2026</span>
+        </div>
+        <p class="project-desc">
+          An applied econometric regression study analyzing Expected Goals (xG) generation across 120 Serie A forwards using Opta and FBref data. Explores shot quality vs. volume, tactical outlier identification (Krunić, João Pedro, Cutrone), and out-of-sample prediction on Olivier Giroud (R² = 91.4%, Adj R² = 90.8%).
+        </p>
+        <div class="tech-row">
+          <span class="tech-badge">R</span>
+          <span class="tech-badge">Multiple OLS</span>
+          <span class="tech-badge">Opta / FBref</span>
+          <span class="tech-badge">Residual Diagnostics</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models/raw/main/Final-Assignment.pdf" target="_blank" class="link-action bold-action">
+            <i class="fa-solid fa-file-pdf"></i> Read Research Paper (PDF)
+          </a>
+          <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models" target="_blank" class="link-action">
+            <i class="fa-brands fa-github"></i> Repository & Code
+          </a>
+        </div>
+      </article>
 
-        <!-- Project 2: Serie A Player Profiling in Python -->
-        <article class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Serie A Player Profiling & Longitudinal Analytics</h3>
-            <span class="project-badge">Scouting & Python</span>
-          </div>
-          <p class="project-desc">
-            Multi-season exploratory data science suite covering 5 seasons of defender performance tracking (2019–2023), forward KPI correlation analysis, and squad age demographics with interactive Plotly visualisations.
-          </p>
-          <div class="project-tags">
-            <span class="tech-pill">Python 3</span>
-            <span class="tech-pill">Pandas</span>
-            <span class="tech-pill">Plotly</span>
-            <span class="tech-pill">Scouting KPIs</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/apmcastellani-projects/serie-a-player-profiling-python" target="_blank" class="card-link primary-link">
-              <i class="fa-brands fa-github"></i> Explore Notebooks
-            </a>
-          </div>
-        </article>
+      <!-- Project 2: Scouting & Player Profiling -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Serie A Player Profiling & Longitudinal Analytics</h3>
+          <span class="project-meta">Scouting Analytics · 2024–2026</span>
+        </div>
+        <p class="project-desc">
+          Longitudinal data analytics suite analyzing 5 seasons of central and wide defender telemetry (2019–2023), forward KPI correlation structures, and goalkeeper shot-stopping metrics with interactive visual profiles.
+        </p>
+        <div class="tech-row">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Pandas</span>
+          <span class="tech-badge">Plotly</span>
+          <span class="tech-badge">Scouting Radar</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/apmcastellani-projects/serie-a-player-profiling-python" target="_blank" class="link-action bold-action">
+            <i class="fa-brands fa-github"></i> View Notebooks & Visuals
+          </a>
+        </div>
+      </article>
 
-        <!-- Project 3: XGBoost Predictive Dashboard -->
-        <article class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">Multi-Horizon XGBoost Predictive Dashboard</h3>
-            <span class="project-badge">ML Engineering</span>
-          </div>
-          <p class="project-desc">
-            End-to-end machine learning engine with purged walk-forward cross-validation to eliminate lookahead bias, high-performance FastAPI backend, realistic backtesting, and interactive decision-support interface.
-          </p>
-          <div class="project-tags">
-            <span class="tech-pill">XGBoost</span>
-            <span class="tech-pill">FastAPI</span>
-            <span class="tech-pill">Walk-Forward CV</span>
-            <span class="tech-pill">Time-Series</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/apmcastellani-projects/xgboost-prediction-dashboard" target="_blank" class="card-link primary-link">
-              <i class="fa-brands fa-github"></i> View Architecture
-            </a>
-          </div>
-        </article>
+      <!-- Project 3: XGBoost -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Multi-Horizon XGBoost Prediction Engine & Dashboard</h3>
+          <span class="project-meta">Machine Learning · 2026</span>
+        </div>
+        <p class="project-desc">
+          End-to-end forecasting pipeline utilizing purged walk-forward cross-validation with practical financial buffers to strictly prevent lookahead bias. Integrated with a FastAPI REST backend and decision interface.
+        </p>
+        <div class="tech-row">
+          <span class="tech-badge">XGBoost</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">Walk-Forward CV</span>
+          <span class="tech-badge">Python</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/apmcastellani-projects/xgboost-prediction-dashboard" target="_blank" class="link-action bold-action">
+            <i class="fa-brands fa-github"></i> View Architecture & Engine
+          </a>
+        </div>
+      </article>
 
-        <!-- Project 4: IFCS 2026 Data Challenge -->
-        <article class="project-card">
-          <div class="project-header">
-            <h3 class="project-title">IFCS 2026 International Data Challenge</h3>
-            <span class="project-badge">Hackathon / Challenge</span>
-          </div>
-          <p class="project-desc">
-            Competitive machine learning pipeline developed for the IFCS 2026 challenge analyzing 14,000 Italian SMEs. Features non-linear signed log transforms, 5-fold stratified CV, and threshold optimization via Youden's J Index and ROC metrics.
-          </p>
-          <div class="project-tags">
-            <span class="tech-pill">Competitive ML</span>
-            <span class="tech-pill">Scikit-Learn</span>
-            <span class="tech-pill">Threshold Tuning</span>
-            <span class="tech-pill">Stratified CV</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026" target="_blank" class="card-link primary-link">
-              <i class="fa-brands fa-github"></i> View Challenge Pipeline
-            </a>
-            <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026/blob/main/docs/01_participant_brief.pdf" target="_blank" class="card-link">
-              <i class="fa-solid fa-file-pdf"></i> Challenge Brief
-            </a>
-          </div>
-        </article>
-
-      </div>
+      <!-- Project 4: IFCS Challenge -->
+      <article class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">IFCS 2026 International Data Challenge</h3>
+          <span class="project-meta">Competition · 2026</span>
+        </div>
+        <p class="project-desc">
+          Machine learning classification pipeline developed for the IFCS 2026 data competition predicting financial distress across 14,000 Italian SMEs. Features non-linear signed log transforms, 5-fold stratified CV, and Youden's J threshold optimization.
+        </p>
+        <div class="tech-row">
+          <span class="tech-badge">Scikit-Learn</span>
+          <span class="tech-badge">Stratified CV</span>
+          <span class="tech-badge">Imbalanced Data</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026" target="_blank" class="link-action bold-action">
+            <i class="fa-brands fa-github"></i> Challenge Pipeline
+          </a>
+          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026/blob/main/docs/01_participant_brief.pdf" target="_blank" class="link-action">
+            <i class="fa-solid fa-file-pdf"></i> Official Brief
+          </a>
+        </div>
+      </article>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2026 Alessandro Castellani · Available for internships & collaborations</p>
-      <p style="margin-top: 0.25rem; font-size: 0.8rem; color: #475569;">Milan / Como, Italy · <a href="mailto:alecaste041202@gmail.com" style="color: #64748b; text-decoration: none;">alecaste041202@gmail.com</a></p>
+      <p>&copy; 2026 Alessandro Castellani · Milan / Como, Italy</p>
+      <p>Direct inquiries: <a href="mailto:alecaste041202@gmail.com" style="color: inherit; text-decoration: underline;">alecaste041202@gmail.com</a></p>
     </footer>
 
   </main>
