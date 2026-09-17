@@ -3,27 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alessandro Castellani | Mathematics & Football Data Analytics</title>
-  <meta name="description" content="Portfolio of Alessandro Castellani - Graduate in Mathematics & MSc Candidate in Data Analytics for Business. Quantitative Football Analytics, Machine Learning & Statistical Modeling." />
+  <title>Alessandro Castellani — Quantitative Sports Analytics & Mathematics</title>
+  <meta name="description" content="Alessandro Castellani — BSc in Mathematics, MSc candidate in Data Analytics for Business. Quantitative Football Analytics, Machine Learning & Econometric Modeling." />
   
-  <!-- Inter Font & FontAwesome -->
+  <!-- Fonts: Playfair Display (Editorial Serif) & Inter (Neutral Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 
   <style>
+    /* STRICT DESIGN SYSTEM SPECIFICATIONS */
     :root {
-      --bg: #ffffff;
-      --bg-subtle: #f8fafc;
-      --border: #e2e8f0;
-      --border-dark: #cbd5e1;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --text-light: #64748b;
-      --accent: #0f172a;
-      --tag-bg: #f1f5f9;
-      --tag-text: #334155;
+      /* Palette */
+      --bg-base: #0a0a0a;
+      --bg-surface: #121212;
+      --bg-surface-elevated: #181818;
+      
+      --gold: #D4AF37;
+      --gold-hover: #E5C158;
+      --gold-subtle: rgba(212, 175, 55, 0.08);
+      --gold-border: rgba(212, 175, 55, 0.28);
+      --gold-border-focus: rgba(212, 175, 55, 0.65);
+
+      --border-subtle: rgba(255, 255, 255, 0.07);
+      --border-medium: rgba(255, 255, 255, 0.14);
+
+      --text-primary: #f5f5f5;
+      --text-secondary: #a3a3a3;
+      --text-muted: #737373;
+      --text-dim: #525252;
+
+      /* Spacing Scale (Strict 4/8/16/32/64px) */
+      --sp-1: 4px;
+      --sp-2: 8px;
+      --sp-3: 16px;
+      --sp-4: 32px;
+      --sp-5: 64px;
+
+      /* Animation Easing */
+      --ease-editorial: cubic-bezier(0.19, 1, 0.22, 1);
+      --ease-hover: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: 0.18s var(--ease-hover);
+      --transition-base: 0.3s var(--ease-editorial);
     }
 
     * {
@@ -33,120 +57,185 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
+      letter-spacing: -0.011em;
       -webkit-font-smoothing: antialiased;
-      padding: 2.5rem 1.25rem 4rem 1.25rem;
+      -moz-osx-font-smoothing: grayscale;
+      padding: var(--sp-5) var(--sp-3);
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
     }
 
-    .container {
+    .editorial-wrapper {
       width: 100%;
-      max-width: 660px;
+      max-width: 680px;
       display: flex;
       flex-direction: column;
-      gap: 2.25rem;
+      gap: var(--sp-4);
     }
 
-    /* Profile Header */
-    .profile-section {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.25rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
+    /* TYPOGRAPHY */
+    .serif-display {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
     }
 
-    .profile-top {
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold);
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      width: 100%;
+      gap: var(--sp-2);
     }
 
-    .avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border-dark);
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      background-color: var(--gold);
+    }
+
+    /* HEADER / PROFILE BLOCK */
+    .profile-masthead {
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg-surface);
+      border-radius: 4px;
+      padding: var(--sp-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      position: relative;
+    }
+
+    .masthead-top {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+
+    .photo-frame {
+      width: 80px;
+      height: 80px;
+      border-radius: 2px;
+      border: 1px solid var(--gold-border);
+      padding: 3px;
+      background: var(--bg-base);
       flex-shrink: 0;
     }
 
-    .profile-titles {
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(18%);
+      transition: filter var(--transition-base);
+    }
+
+    .photo-frame:hover img {
+      filter: grayscale(0%);
+    }
+
+    .identity-block {
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: var(--sp-1);
     }
 
-    .profile-name {
-      font-size: 1.65rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      color: var(--text-main);
-      line-height: 1.2;
+    .identity-name {
+      font-size: 28px;
+      line-height: 1.15;
     }
 
-    .profile-headline {
-      font-size: 0.95rem;
+    .identity-title {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: -0.005em;
+    }
+
+    .identity-meta {
+      font-size: 12px;
       color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .profile-location {
-      font-size: 0.85rem;
-      color: var(--text-light);
       display: flex;
       align-items: center;
-      gap: 0.35rem;
-      margin-top: 0.15rem;
+      gap: var(--sp-1);
+      margin-top: var(--sp-1);
     }
 
-    .profile-bio {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.65;
+    .editorial-bio {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-weight: 300;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: var(--sp-3);
     }
 
-    /* Meta details / tags */
-    .credentials {
+    .editorial-bio strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* CREDENTIAL ACCENTS */
+    .cred-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
+      gap: var(--sp-2);
+      margin-top: var(--sp-1);
     }
 
-    .cred-pill {
-      font-size: 0.8rem;
+    .cred-tag {
+      font-size: 11.5px;
       font-weight: 500;
-      padding: 0.3rem 0.65rem;
-      border-radius: 6px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 10px;
+      border-radius: 2px;
+      letter-spacing: 0.01em;
     }
 
-    /* Direct Action Buttons */
-    .actions-grid {
+    .cred-tag.gold-tag {
+      border-color: var(--gold-border);
+      color: var(--gold);
+      background: var(--gold-subtle);
+    }
+
+    /* ACTION BUTTONS (Clean, sharp corners, no pill shapes, no soft blur shadows) */
+    .action-group {
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
+      gap: var(--sp-2);
       width: 100%;
+      margin-top: var(--sp-2);
     }
 
-    .btn-row-dual {
+    .button-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.65rem;
+      gap: var(--sp-2);
     }
 
-    @media (max-width: 500px) {
-      .btn-row-dual {
+    @media (max-width: 540px) {
+      .button-row {
         grid-template-columns: 1fr;
+      }
+      .masthead-top {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
@@ -154,362 +243,457 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
+      gap: var(--sp-2);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 12px var(--sp-3);
+      border-radius: 2px;
       text-decoration: none;
-      transition: all 0.15s ease;
       cursor: pointer;
+      transition: all var(--transition-fast);
+      position: relative;
     }
 
-    .btn-primary {
-      background: #0f172a;
-      color: #ffffff;
-      border: 1px solid #0f172a;
+    .btn-gold {
+      background: var(--gold);
+      color: #0a0a0a;
+      border: 1px solid var(--gold);
+      font-weight: 600;
     }
 
-    .btn-primary:hover {
-      background: #334155;
-      border-color: #334155;
+    .btn-gold:hover {
+      background: var(--gold-hover);
+      border-color: var(--gold-hover);
+      transform: translateY(-1px);
     }
 
-    .btn-secondary {
-      background: #ffffff;
-      color: var(--text-main);
-      border: 1px solid var(--border-dark);
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-medium);
     }
 
-    .btn-secondary:hover {
-      background: var(--bg-subtle);
-      border-color: #94a3b8;
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: var(--gold-subtle);
+      transform: translateY(-1px);
     }
 
-    /* Direct Channels / Contact Links */
-    .channels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+    .btn-full {
       width: 100%;
     }
 
-    .channel-item {
-      flex: 1;
-      min-width: 120px;
+    /* CHANNELS GRID */
+    .channel-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-2);
+      width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      .channel-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .channel-link {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 0.55rem 0.85rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 500;
+      gap: 6px;
+      padding: 10px 8px;
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
       color: var(--text-muted);
       text-decoration: none;
-      background: #ffffff;
-      transition: all 0.15s ease;
+      font-size: 12px;
+      font-weight: 500;
+      transition: all var(--transition-fast);
     }
 
-    .channel-item:hover {
-      color: var(--text-main);
-      border-color: #94a3b8;
-      background: var(--bg-subtle);
+    .channel-link i {
+      font-size: 15px;
     }
 
-    /* Section Styling */
-    .section {
+    .channel-link:hover {
+      color: var(--text-primary);
+      border-color: var(--gold-border);
+      background: var(--bg-surface-elevated);
+    }
+
+    /* SECTION HEADER */
+    .section-headline-group {
       display: flex;
       flex-direction: column;
-      gap: 1.15rem;
+      gap: var(--sp-1);
+      margin-bottom: var(--sp-3);
     }
 
     .section-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--text-light);
+      font-size: 20px;
+      letter-spacing: -0.015em;
     }
 
-    /* Projects List */
-    .project-card {
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #ffffff;
+    /* PROJECTS FEED */
+    .project-feed {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      transition: border-color 0.15s ease;
+      gap: var(--sp-3);
     }
 
-    .project-card:hover {
-      border-color: #94a3b8;
+    /* HIERARCHICAL CARD SYSTEM */
+    /* Primary Tier: Flagship Research Paper */
+    .project-card.flagship-tier {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--gold-border);
+      border-radius: 4px;
+      padding: var(--sp-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      position: relative;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
     }
 
-    .project-header {
+    .project-card.flagship-tier:hover {
+      border-color: var(--gold-border-focus);
+      background-color: var(--bg-surface-elevated);
+    }
+
+    /* Standard Tier: Other projects */
+    .project-card.standard-tier {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 2px;
+      padding: var(--sp-3);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      transition: border-color var(--transition-fast);
+    }
+
+    .project-card.standard-tier:hover {
+      border-color: var(--border-medium);
+    }
+
+    .card-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 0.5rem;
+      gap: var(--sp-2);
     }
 
-    .project-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-main);
+    .card-title {
+      font-size: 17px;
       line-height: 1.35;
+      color: var(--text-primary);
     }
 
-    .project-meta {
-      font-size: 0.78rem;
+    .card-badge {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       font-weight: 600;
-      color: var(--text-light);
+      color: var(--gold);
       white-space: nowrap;
     }
 
-    .project-desc {
-      font-size: 0.9rem;
+    .card-badge.subtle-badge {
       color: var(--text-muted);
-      line-height: 1.55;
     }
 
-    .tech-row {
+    .card-abstract {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .card-tech-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.15rem;
+      gap: var(--sp-1);
     }
 
-    .tech-badge {
-      font-size: 0.75rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      color: #475569;
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
+    .tech-item {
+      font-size: 11px;
+      font-family: 'Inter', monospace;
+      color: var(--text-muted);
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      padding: 2px 6px;
+      border-radius: 2px;
     }
 
-    .project-links {
+    .card-links-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.35rem;
+      gap: var(--sp-2);
+      margin-top: var(--sp-1);
     }
 
-    .link-action {
+    .link-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #0f172a;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 2px;
       text-decoration: none;
-      padding: 0.35rem 0.65rem;
-      border: 1px solid var(--border-dark);
-      border-radius: 6px;
-      background: #ffffff;
-      transition: all 0.15s ease;
+      transition: all var(--transition-fast);
     }
 
-    .link-action:hover {
-      background: var(--bg-subtle);
-      border-color: #0f172a;
+    .link-btn-gold {
+      background: var(--gold-subtle);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
     }
 
-    .link-action.bold-action {
-      background: #0f172a;
-      color: #ffffff;
-      border-color: #0f172a;
+    .link-btn-gold:hover {
+      background: var(--gold);
+      color: #0a0a0a;
+      border-color: var(--gold);
     }
 
-    .link-action.bold-action:hover {
-      background: #334155;
-      border-color: #334155;
+    .link-btn-subtle {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
     }
 
-    /* Footer */
+    .link-btn-subtle:hover {
+      border-color: var(--border-medium);
+      color: var(--text-primary);
+    }
+
+    /* FOOTER */
     footer {
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.82rem;
-      color: var(--text-light);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: var(--sp-4);
+      margin-top: var(--sp-3);
       display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 500px) {
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--sp-2);
+      }
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    footer a:hover {
+      color: var(--gold);
     }
   </style>
 </head>
 <body>
 
-  <main class="container">
+  <div class="editorial-wrapper">
 
-    <!-- Profile Header -->
-    <header class="profile-section">
-      <div class="profile-top">
-        <img src="assets/foto_alessandro.png" alt="Alessandro Castellani" class="avatar" />
-        <div class="profile-titles">
-          <h1 class="profile-name">Alessandro Castellani</h1>
-          <p class="profile-headline">BSc in Mathematics · MSc in Data Analytics for Business</p>
-          <p class="profile-location">
-            <i class="fa-solid fa-location-dot"></i> Milan / Como, Italy · Available for travel
-          </p>
+    <!-- TOP PROFILE MASTHEAD -->
+    <header class="profile-masthead">
+      
+      <div class="eyebrow">Academic & Sports Analytics Profile</div>
+
+      <div class="masthead-top">
+        <div class="photo-frame">
+          <img src="assets/foto_alessandro.png" alt="Alessandro Castellani" />
+        </div>
+        <div class="identity-block">
+          <h1 class="serif-display identity-name">Alessandro Castellani</h1>
+          <p class="identity-title">BSc in Mathematics · MSc in Data Analytics for Business</p>
+          <div class="identity-meta">
+            <i class="ph ph-map-pin"></i>
+            <span>Milan & Como, Italy · Available for international travel</span>
+          </div>
         </div>
       </div>
 
-      <p class="profile-bio">
-        Graduate in Mathematics (Università dell'Insubria) currently pursuing a Master of Science in Data Analytics for Business at Università Cattolica del Sacro Cuore in Milan. Applying econometric modeling, machine learning, and quantitative analytics to football scouting, player evaluation, and predictive performance.
+      <p class="editorial-bio">
+        Graduate in <strong>Mathematics</strong> from Università degli Studi dell'Insubria, currently reading for a Master of Science in <strong>Data Analytics for Business</strong> at Università Cattolica del Sacro Cuore in Milan. Applying econometric modeling, mathematical foundations, and advanced machine learning to football scouting telemetry, performance evaluation, and sports intelligence.
       </p>
 
-      <div class="credentials">
-        <span class="cred-pill">BSc Mathematics (Thesis: Neural Networks in Football)</span>
-        <span class="cred-pill">MSc Data Analytics (Cattolica)</span>
-        <span class="cred-pill">Competitive Golfer (National Championships)</span>
-        <span class="cred-pill">Hyrox Competitor</span>
+      <div class="cred-strip">
+        <span class="cred-tag gold-tag">Thesis: Neural Networks in Football (TensorFlow)</span>
+        <span class="cred-tag">Università Cattolica del Sacro Cuore</span>
+        <span class="cred-tag">National Regional Golf Representative</span>
+        <span class="cred-tag">Hyrox Competitor</span>
       </div>
 
-      <!-- Resume & Contact Download -->
-      <div class="actions-grid">
-        <div class="btn-row-dual">
-          <a href="CV-Alessandro-Castellani-Europeo.pdf" download class="btn btn-primary">
-            <i class="fa-solid fa-file-arrow-down"></i> Download European CV (PDF)
+      <!-- Action Buttons -->
+      <div class="action-group">
+        <div class="button-row">
+          <a href="CV-Alessandro-Castellani-Europeo.pdf" download class="btn btn-gold">
+            <i class="ph ph-file-arrow-down"></i>
+            <span>Download European CV (PDF)</span>
           </a>
-          <a href="CV-Alessandro-Castellani-International.pdf" download class="btn btn-secondary">
-            <i class="fa-solid fa-file-lines"></i> Download International CV (PDF)
-          </a>
-        </div>
-        <div>
-          <a href="alessandro_castellani.vcf" download class="btn btn-secondary" style="width: 100%;">
-            <i class="fa-solid fa-address-card"></i> Save Contact to Phone (vCard)
+          <a href="CV-Alessandro-Castellani-International.pdf" download class="btn btn-outline">
+            <i class="ph ph-file-text"></i>
+            <span>Download International CV (PDF)</span>
           </a>
         </div>
+        <a href="alessandro_castellani.vcf" download class="btn btn-outline btn-full">
+          <i class="ph ph-address-book"></i>
+          <span>Save Contact Card to Phone (vCard)</span>
+        </a>
       </div>
 
       <!-- Direct Channels -->
-      <nav class="channels" aria-label="Direct Channels">
-        <a href="https://wa.me/393335288084" target="_blank" rel="noopener" class="channel-item">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      <nav class="channel-strip" aria-label="Direct Communication Channels">
+        <a href="https://wa.me/393335288084" target="_blank" rel="noopener" class="channel-link">
+          <i class="ph ph-whatsapp-logo"></i>
+          <span>WhatsApp</span>
         </a>
-        <a href="mailto:alecaste041202@gmail.com" class="channel-item">
-          <i class="fa-regular fa-envelope"></i> Email
+        <a href="mailto:alecaste041202@gmail.com" class="channel-link">
+          <i class="ph ph-envelope-simple"></i>
+          <span>Email</span>
         </a>
-        <a href="https://www.linkedin.com/in/alessandro-castellani/" target="_blank" rel="noopener" class="channel-item">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        <a href="https://www.linkedin.com/in/alessandro-castellani/" target="_blank" rel="noopener" class="channel-link">
+          <i class="ph ph-linkedin-logo"></i>
+          <span>LinkedIn</span>
         </a>
-        <a href="https://github.com/apmcastellani-projects" target="_blank" rel="noopener" class="channel-item">
-          <i class="fa-brands fa-github"></i> GitHub
+        <a href="https://github.com/apmcastellani-projects" target="_blank" rel="noopener" class="channel-link">
+          <i class="ph ph-github-logo"></i>
+          <span>GitHub</span>
         </a>
       </nav>
+
     </header>
 
-    <!-- Research & Quantitative Projects -->
-    <section class="section">
-      <h2 class="section-title">Quantitative Projects & Research</h2>
+    <!-- QUANTITATIVE PROJECTS & RESEARCH -->
+    <main class="project-feed">
 
-      <!-- Project 1: Serie A xG -->
-      <article class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">Evaluating Offensive Production in Serie A (xG Linear Modeling)</h3>
-          <span class="project-meta">Research Paper · 2026</span>
+      <div class="section-headline-group">
+        <div class="eyebrow">Selected Research & Engineering</div>
+        <h2 class="serif-display section-title">Quantitative Portfolio</h2>
+      </div>
+
+      <!-- Project 1: Flagship Research Paper -->
+      <article class="project-card flagship-tier">
+        <div class="card-top">
+          <h3 class="serif-display card-title">Evaluating Offensive Production in Serie A (xG Linear Modeling)</h3>
+          <span class="card-badge">Flagship Paper · 2026</span>
         </div>
-        <p class="project-desc">
-          An applied econometric regression study analyzing Expected Goals (xG) generation across 120 Serie A forwards using Opta and FBref data. Explores shot quality vs. volume, tactical outlier identification (Krunić, João Pedro, Cutrone), and out-of-sample prediction on Olivier Giroud (R² = 91.4%, Adj R² = 90.8%).
+        <p class="card-abstract">
+          An econometric multiple linear regression paper investigating Expected Goals (xG) generation across 120 Serie A forwards using Opta and FBref data. Decouples shot volume from finish quality, executes rigorous residual diagnostics identifying tactical anomalies (Krunić, João Pedro, Cutrone), and proves out-of-sample stability on Olivier Giroud (R² = 91.4%, Adjusted R² = 90.8%).
         </p>
-        <div class="tech-row">
-          <span class="tech-badge">R</span>
-          <span class="tech-badge">Multiple OLS</span>
-          <span class="tech-badge">Opta / FBref</span>
-          <span class="tech-badge">Residual Diagnostics</span>
+        <div class="card-tech-row">
+          <span class="tech-item">R</span>
+          <span class="tech-item">Multiple OLS</span>
+          <span class="tech-item">Opta / FBref Telemetry</span>
+          <span class="tech-item">Breusch-Pagan & Shapiro-Wilk</span>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models/raw/main/Final-Assignment.pdf" target="_blank" class="link-action bold-action">
-            <i class="fa-solid fa-file-pdf"></i> Read Research Paper (PDF)
+        <div class="card-links-row">
+          <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models/raw/main/Final-Assignment.pdf" target="_blank" class="link-btn link-btn-gold">
+            <i class="ph ph-file-pdf"></i>
+            <span>Read Academic Paper (PDF)</span>
           </a>
-          <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models" target="_blank" class="link-action">
-            <i class="fa-brands fa-github"></i> Repository & Code
+          <a href="https://github.com/apmcastellani-projects/serie-a-xg-linear-models" target="_blank" class="link-btn link-btn-subtle">
+            <i class="ph ph-code"></i>
+            <span>Repository & Code</span>
           </a>
         </div>
       </article>
 
-      <!-- Project 2: Scouting & Player Profiling -->
-      <article class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">Serie A Player Profiling & Longitudinal Analytics</h3>
-          <span class="project-meta">Scouting Analytics · 2024–2026</span>
+      <!-- Project 2: Player Profiling -->
+      <article class="project-card standard-tier">
+        <div class="card-top">
+          <h3 class="card-title">Serie A Player Profiling & Longitudinal Analytics</h3>
+          <span class="card-badge subtle-badge">Scouting Analytics · 2024–2026</span>
         </div>
-        <p class="project-desc">
-          Longitudinal data analytics suite analyzing 5 seasons of central and wide defender telemetry (2019–2023), forward KPI correlation structures, and goalkeeper shot-stopping metrics with interactive visual profiles.
+        <p class="card-abstract">
+          Multi-season exploratory tracking suite analyzing 5 seasons of central and wide defenders (2019–2023), forward tactical KPI correlations, and goalkeeper shot-stopping metrics with custom radar visualizations.
         </p>
-        <div class="tech-row">
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">Pandas</span>
-          <span class="tech-badge">Plotly</span>
-          <span class="tech-badge">Scouting Radar</span>
+        <div class="card-tech-row">
+          <span class="tech-item">Python</span>
+          <span class="tech-item">Pandas</span>
+          <span class="tech-item">Plotly</span>
+          <span class="tech-item">Role KPI Radars</span>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/apmcastellani-projects/serie-a-player-profiling-python" target="_blank" class="link-action bold-action">
-            <i class="fa-brands fa-github"></i> View Notebooks & Visuals
+        <div class="card-links-row">
+          <a href="https://github.com/apmcastellani-projects/serie-a-player-profiling-python" target="_blank" class="link-btn link-btn-subtle">
+            <i class="ph ph-arrow-up-right"></i>
+            <span>View Scouting Notebooks</span>
           </a>
         </div>
       </article>
 
-      <!-- Project 3: XGBoost -->
-      <article class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">Multi-Horizon XGBoost Prediction Engine & Dashboard</h3>
-          <span class="project-meta">Machine Learning · 2026</span>
+      <!-- Project 3: XGBoost Dashboard -->
+      <article class="project-card standard-tier">
+        <div class="card-top">
+          <h3 class="card-title">Multi-Horizon XGBoost Prediction Engine & Dashboard</h3>
+          <span class="card-badge subtle-badge">ML Engineering · 2026</span>
         </div>
-        <p class="project-desc">
-          End-to-end forecasting pipeline utilizing purged walk-forward cross-validation with practical financial buffers to strictly prevent lookahead bias. Integrated with a FastAPI REST backend and decision interface.
+        <p class="card-abstract">
+          Forecasting engine featuring purged walk-forward cross-validation with embargo periods to strictly prevent lookahead leakage. Backed by an asynchronous FastAPI REST server and analytical decision interface.
         </p>
-        <div class="tech-row">
-          <span class="tech-badge">XGBoost</span>
-          <span class="tech-badge">FastAPI</span>
-          <span class="tech-badge">Walk-Forward CV</span>
-          <span class="tech-badge">Python</span>
+        <div class="card-tech-row">
+          <span class="tech-item">XGBoost</span>
+          <span class="tech-item">FastAPI</span>
+          <span class="tech-item">Purged Walk-Forward</span>
+          <span class="tech-item">Python 3.11</span>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/apmcastellani-projects/xgboost-prediction-dashboard" target="_blank" class="link-action bold-action">
-            <i class="fa-brands fa-github"></i> View Architecture & Engine
+        <div class="card-links-row">
+          <a href="https://github.com/apmcastellani-projects/xgboost-prediction-dashboard" target="_blank" class="link-btn link-btn-subtle">
+            <i class="ph ph-arrow-up-right"></i>
+            <span>View Engine Architecture</span>
           </a>
         </div>
       </article>
 
-      <!-- Project 4: IFCS Challenge -->
-      <article class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">IFCS 2026 International Data Challenge</h3>
-          <span class="project-meta">Competition · 2026</span>
+      <!-- Project 4: IFCS Data Challenge -->
+      <article class="project-card standard-tier">
+        <div class="card-top">
+          <h3 class="card-title">IFCS 2026 International Data Challenge</h3>
+          <span class="card-badge subtle-badge">Competition · 2026</span>
         </div>
-        <p class="project-desc">
-          Machine learning classification pipeline developed for the IFCS 2026 data competition predicting financial distress across 14,000 Italian SMEs. Features non-linear signed log transforms, 5-fold stratified CV, and Youden's J threshold optimization.
+        <p class="card-abstract">
+          Machine learning classification pipeline predicting SME financial distress on 14,000 corporate records. Implements non-linear signed log transforms, 5-fold stratified cross-validation, and Youden's J threshold optimization.
         </p>
-        <div class="tech-row">
-          <span class="tech-badge">Scikit-Learn</span>
-          <span class="tech-badge">Stratified CV</span>
-          <span class="tech-badge">Imbalanced Data</span>
+        <div class="card-tech-row">
+          <span class="tech-item">Scikit-Learn</span>
+          <span class="tech-item">Stratified CV</span>
+          <span class="tech-item">Non-linear Transforms</span>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026" target="_blank" class="link-action bold-action">
-            <i class="fa-brands fa-github"></i> Challenge Pipeline
+        <div class="card-links-row">
+          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026" target="_blank" class="link-btn link-btn-subtle">
+            <i class="ph ph-arrow-up-right"></i>
+            <span>Challenge Pipeline</span>
           </a>
-          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026/blob/main/docs/01_participant_brief.pdf" target="_blank" class="link-action">
-            <i class="fa-solid fa-file-pdf"></i> Official Brief
+          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026/blob/main/docs/01_participant_brief.pdf" target="_blank" class="link-btn link-btn-subtle">
+            <i class="ph ph-file-pdf"></i>
+            <span>Official Brief</span>
           </a>
         </div>
       </article>
-    </section>
 
-    <!-- Footer -->
+    </main>
+
+    <!-- EDITORIAL FOOTER -->
     <footer>
-      <p>&copy; 2026 Alessandro Castellani · Milan / Como, Italy</p>
-      <p>Direct inquiries: <a href="mailto:alecaste041202@gmail.com" style="color: inherit; text-decoration: underline;">alecaste041202@gmail.com</a></p>
+      <div>Alessandro Castellani · Milan & Como, Italy</div>
+      <div>
+        <a href="mailto:alecaste041202@gmail.com">alecaste041202@gmail.com</a>
+      </div>
     </footer>
 
-  </main>
+  </div>
 
 </body>
 </html>
