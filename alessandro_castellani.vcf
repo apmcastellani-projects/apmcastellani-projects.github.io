@@ -2,11 +2,11 @@ BEGIN:VCARD
 VERSION:3.0
 N:Castellani;Alessandro;;;
 FN:Alessandro Castellani
-TITLE:Student in Mathematics | Applied Data & Sports Analytics
+TITLE:MSc Data Analytics for Business · BSc Mathematics
 TEL;TYPE=CELL,VOICE:+393335288084
 EMAIL;TYPE=PREF,INTERNET:alecaste041202@gmail.com
-URL:https://alecaste96.github.io
+URL:https://apmcastellani-projects.github.io
 X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/alessandro-castellani/
-X-SOCIALPROFILE;TYPE=github:https://github.com/Alecaste96
-NOTE:BSc Mathematics (Università dell'Insubria) | MSc Applied Data Science (Università Cattolica) | Competitive Golfer
+X-SOCIALPROFILE;TYPE=github:https://github.com/apmcastellani-projects
+NOTE:BSc Mathematics (Insubria) | MSc Data Analytics for Business (Università Cattolica) | Competitive Golfer
 END:VCARD
