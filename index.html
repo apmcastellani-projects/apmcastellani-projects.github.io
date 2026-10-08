@@ -526,7 +526,7 @@
       </div>
 
       <p class="editorial-bio">
-        Graduate in <strong>Mathematics</strong> from Università degli Studi dell'Insubria, currently reading for a Master of Science in <strong>Data Analytics for Business</strong> at Università Cattolica del Sacro Cuore in Milan. Applying econometric modeling, mathematical foundations, and advanced machine learning to football scouting telemetry, performance evaluation, and sports intelligence.
+        Graduate in <strong>Mathematics</strong> from Università degli Studi dell'Insubria, currently reading for a Master of Science in <strong>Data Analytics for Business</strong> at Università Cattolica del Sacro Cuore in Milan. Applying econometric modeling, mathematical foundations, and advanced machine learning to football analytics, player evaluation, and business intelligence.
       </p>
 
       <div class="cred-strip">
@@ -590,12 +590,12 @@
           <span class="card-badge">Flagship Paper · 2026</span>
         </div>
         <p class="card-abstract">
-          An econometric multiple linear regression paper investigating Expected Goals (xG) generation across 120 Serie A forwards using Opta and FBref data. Decouples shot volume from finish quality, executes rigorous residual diagnostics identifying tactical anomalies (Krunić, João Pedro, Cutrone), and proves out-of-sample stability on Olivier Giroud (R² = 91.4%, Adjusted R² = 90.8%).
+          An econometric multiple linear regression paper investigating Expected Goals (xG) generation across 120 Serie A forwards using Opta and FBref event data. Decouples raw shot volume from finishing quality, executes rigorous residual diagnostics identifying tactical anomalies (Krunić, João Pedro, Cutrone), and proves out-of-sample stability on Olivier Giroud (R² = 91.4%, Adjusted R² = 90.8%).
         </p>
         <div class="card-tech-row">
           <span class="tech-item">R</span>
           <span class="tech-item">Multiple OLS</span>
-          <span class="tech-item">Opta / FBref Telemetry</span>
+          <span class="tech-item">Opta / FBref Event Data</span>
           <span class="tech-item">Breusch-Pagan & Shapiro-Wilk</span>
         </div>
         <div class="card-links-row">
@@ -610,6 +610,32 @@
         </div>
       </article>
 
+      <!-- Project 2: IFCS Data Challenge -->
+      <article class="project-card standard-tier">
+        <div class="card-top">
+          <h3 class="card-title">IFCS 2026 Data Challenge</h3>
+          <span class="card-badge subtle-badge">ML Hackathon · 2026</span>
+        </div>
+        <p class="card-abstract">
+          End-to-end machine learning classification pipeline predicting SME financial distress across 14,000 Italian firms under strict time constraints, pitching findings to an academic jury (Milan-Bicocca). Implements non-linear signed logarithmic transformations sign(x)·ln(1+|x|), 5-fold stratified cross-validation without leakage, and Youden's J threshold optimization.
+        </p>
+        <div class="card-tech-row">
+          <span class="tech-item">Scikit-Learn</span>
+          <span class="tech-item">Stratified CV</span>
+          <span class="tech-item">Non-linear Transforms</span>
+          <span class="tech-item">Youden's J Index</span>
+        </div>
+        <div class="card-links-row">
+          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026" target="_blank" class="link-btn link-btn-subtle">
+            <i class="ph ph-arrow-up-right"></i>
+            <span>Challenge Pipeline</span>
+          </a>
+          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026/blob/main/docs/01_participant_brief.pdf" target="_blank" class="link-btn link-btn-subtle">
+            <i class="ph ph-file-pdf"></i>
+            <span>Official Brief</span>
+          </a>
+        </div>
+      </article>
 
       <!-- Project 3: XGBoost Dashboard -->
       <article class="project-card standard-tier">
@@ -618,7 +644,7 @@
           <span class="card-badge subtle-badge">ML Engineering · 2026</span>
         </div>
         <p class="card-abstract">
-          Forecasting engine featuring purged walk-forward cross-validation with embargo periods to strictly prevent lookahead leakage. Backed by an asynchronous FastAPI REST server and analytical decision interface.
+          Time-series return forecasting engine featuring purged walk-forward cross-validation with embargo periods to strictly eliminate lookahead bias. Integrated with an asynchronous FastAPI REST backend and interactive analytical frontend.
         </p>
         <div class="card-tech-row">
           <span class="tech-item">XGBoost</span>
@@ -630,32 +656,6 @@
           <a href="https://github.com/apmcastellani-projects/xgboost-prediction-dashboard" target="_blank" class="link-btn link-btn-subtle">
             <i class="ph ph-arrow-up-right"></i>
             <span>View Engine Architecture</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- Project 4: IFCS Data Challenge -->
-      <article class="project-card standard-tier">
-        <div class="card-top">
-          <h3 class="card-title">IFCS 2026 International Data Challenge</h3>
-          <span class="card-badge subtle-badge">Competition · 2026</span>
-        </div>
-        <p class="card-abstract">
-          Machine learning classification pipeline predicting SME financial distress on 14,000 corporate records. Implements non-linear signed log transforms, 5-fold stratified cross-validation, and Youden's J threshold optimization.
-        </p>
-        <div class="card-tech-row">
-          <span class="tech-item">Scikit-Learn</span>
-          <span class="tech-item">Stratified CV</span>
-          <span class="tech-item">Non-linear Transforms</span>
-        </div>
-        <div class="card-links-row">
-          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026" target="_blank" class="link-btn link-btn-subtle">
-            <i class="ph ph-arrow-up-right"></i>
-            <span>Challenge Pipeline</span>
-          </a>
-          <a href="https://github.com/apmcastellani-projects/ifcs-data-challenge-2026/blob/main/docs/01_participant_brief.pdf" target="_blank" class="link-btn link-btn-subtle">
-            <i class="ph ph-file-pdf"></i>
-            <span>Official Brief</span>
           </a>
         </div>
       </article>
